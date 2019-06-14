@@ -13,12 +13,7 @@
         <ul>
             <% todolist.forEach(function(todo, index) { %>
                 <li><a href="/todo/delete/<%= index %>">✘</a> <%= todo %></li>
-                <li>
-                    <!-- apply a class to the selected element -->
-                    <a class='<%= todolist[i].selected %>' href='todo/edit/<%= todolist[i].value %>'>
-                        <%= todolist[i].value %>
-                    </a>
-                </li>
+                <li><a href="/todo/edit/<%= index %>">index</a> <%= todo %></li>
             <% }); %>
         </ul>
 

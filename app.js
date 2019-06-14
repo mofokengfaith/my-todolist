@@ -21,7 +21,10 @@ app.get('/todo', function(req, res) {
 
 /* Edit an item in the to do list */
 .post('/todo/edit/', urlencodedParser, function(req, res) {
-    if (req.body.newtodo != '') {
+    if ((req.body.newtodo != '') || (req.params.id != '')){
+        //remove from the list
+        todolist.splice(req.params.id, 1);
+        //re-add changes to the list
         todolist.push(req.body.newtodo);
     }
     res.redirect('/todo');
