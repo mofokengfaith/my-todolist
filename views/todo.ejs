@@ -11,9 +11,15 @@
     <body>
         <h1>My todolist</h1>
         <ul>
-        <% todolist.forEach(function(todo, index) { %>
-            <li><a href="/todo/delete/<%= index %>">✘</a> <%= todo %></li>
-        <% }); %>
+            <% todolist.forEach(function(todo, index) { %>
+                <li><a href="/todo/delete/<%= index %>">✘</a> <%= todo %></li>
+                <li>
+                    <!-- apply a class to the selected element -->
+                    <a class='<%= todolist[i].selected %>' href='todolist/<%= todolist[i].value %>'>
+                        <%= todolist[i].value %>
+                    </a>
+                </li>
+            <% }); %>
         </ul>
 
         <form action="/todo/add/" method="post">
